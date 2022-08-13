@@ -8,7 +8,7 @@ const execute = (bot, msg, args) => {
       {
         name: "For more info: ``ffk help``",
         value:
-          "**Add ``ffk`` before any command**\n\n🏅 **Statistics commands** 🏅\n``cooldowns``, ``profile``\n\n🗡 **Fighting commands** 🗡\n``hunt``\n\n🛠 **Working commands** 🛠\n``farm``",
+          "**Add ``ffk`` before any command**\n\n🏅 **Statistics commands** 🏅\n``cooldowns``, ``profile``\n\n:dagger: **Fighting commands** :dagger:\n``hunt``\n\n🛠 **Working commands** 🛠\n``farm``",
         inline: true,
       },
     ]);

@@ -3,8 +3,6 @@ const { getRandomNumberBetween } = require("../utils/getRandomNumberBetween");
 const { getWaitTime } = require("../utils/getWaitTime");
 const prisma = new PrismaClient();
 
-const BASE_LEVEL = [125, 250, 375, 500, 625, 750, 875, 1000];
-
 const execute = async (bot, msg, args) => {
   const player = await prisma.players.findUnique({
     where: {
@@ -37,10 +35,6 @@ const execute = async (bot, msg, args) => {
         isHunt: new Date(),
         exp: player.exp + monster.exp,
         coins: player.coins + monster.coins,
-        level:
-          BASE_LEVEL[player.level - 1] > player.exp
-            ? player.level
-            : player.level + 1,
       },
     });
     msg.channel.send(
