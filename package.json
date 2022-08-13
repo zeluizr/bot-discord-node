@@ -11,7 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.2.1",
+    "axios": "^0.27.2",
     "discord.js": "12.1.1",
     "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.2.1"
   }
 }

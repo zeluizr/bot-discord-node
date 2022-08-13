@@ -1,12 +1,9 @@
 const MessageEmbed = require("discord.js").MessageEmbed;
+const MessageCollector = require("discord.js").MessageCollector;
 
 const execute = (bot, msg, args) => {
   const embed = new MessageEmbed()
-    .setColor("#0099ff")
-    .setTitle(
-      `Seja bem-vindo, ${msg.author.username}#${msg.author.discriminator}!`
-    )
-    .setDescription("Esta é uma descrição de teste")
+    .setColor("#ff9900")
     .setThumbnail(
       msg.author.avatar
         ? `https://cdn.discordapp.com/avatars/${msg.author.id}/${msg.author.avatar}.png`
@@ -14,16 +11,21 @@ const execute = (bot, msg, args) => {
             msg.author.discriminator % 5
           }.png`
     )
-    .setURL("https://twitch.tv/reisdev")
+    .setTitle("Normie player")
     .setAuthor(
-      "ReisDev",
-      `https://cdn.discordapp.com/icons/${msg.guild.id}/${msg.guild.icon}.png`,
+      `${msg.author.username} - profile`,
+      `https://cdn.discordapp.com/avatars/${msg.author.id}/${msg.author.avatar}.png`,
       "https://reisdev.github.io"
     )
     .addFields([
       {
-        name: "Você é membro nº",
-        value: msg.guild.memberCount,
+        name: "**PROGRESS**",
+        value: `**Level**: 1 (18.4%) \n **XP**: 23/125`,
+        inline: false,
+      },
+      {
+        name: "Este é um teste",
+        value: "teste",
         inline: true,
       },
       {
@@ -31,17 +33,28 @@ const execute = (bot, msg, args) => {
         value: "teste",
         inline: true,
       },
-    ])
-    .setTimestamp()
-    .setFooter(
-      "ReisDev 2020. Todos os direitos reservados",
-      `https://cdn.discordapp.com/icons/${msg.guild.id}/${msg.guild.icon}.png`
-    );
+    ]);
   msg.channel.send({ embed });
+  const collector = new MessageCollector(
+    msg.channel,
+    (m) => m.author.id === msg.author.id,
+    { time: 360000 }
+  );
+
+  collector.on("collect", (msg) => {
+    if (collector.collected.first().content === "a") {
+      collector.stop();
+      msg.channel.send(`${msg.author} escolheu a`);
+    }
+  });
+
+  collector.on("end", (collected) => {
+    if (collected.size === 0) msg.channel.send(`Seu tempo na Dungeon acabou!`);
+  });
 };
 
 module.exports = {
-  name: "embed",
+  name: "profile",
   help: "Retorna uma MessageEmbed",
   execute,
 };

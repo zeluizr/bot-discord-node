@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Players {
+  id        String   @id
+  attack    Int      @default(13)
+  defense   Int      @default(15)
+  health    Int      @default(100)
+  level     Int      @default(1)
+  exp       Int      @default(0)
+  area      Int      @default(1)
+  coins     Int      @default(0)
+  inventory Json?
+  isHunt    String?
+  isFarm    String?
+  createdAt DateTime
+  updatedAt DateTime @updatedAt
+}
+
+model Monsters {
+  id        String   @id
+  name      String   @unique
+  icon      String   @default("💀")
+  attack    Int      @default(0)
+  defense   Int      @default(0)
+  health    Int      @default(0)
+  level     Int      @default(0)
+  exp       Int      @default(0)
+  area      Int      @default(1)
+  coins     Int      @default(0)
+  inventory Json
+  createdAt DateTime
+  updatedAt DateTime @default(now())
+}
