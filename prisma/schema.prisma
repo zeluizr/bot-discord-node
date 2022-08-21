@@ -8,33 +8,48 @@ datasource db {
 }
 
 model Players {
-  id        String   @id
-  attack    Int      @default(13)
-  defense   Int      @default(15)
-  health    Int      @default(100)
-  level     Int      @default(1)
-  exp       Int      @default(0)
-  area      Int      @default(1)
-  coins     Int      @default(0)
-  inventory Json?
-  isHunt    String?
-  isFarm    String?
-  createdAt DateTime
-  updatedAt DateTime @updatedAt
+  id                  String   @id
+  nome                String   @default("")
+  imagem              String   @default("")
+  forca               Int      @default(0)
+  habilidade          Int      @default(0)
+  resistencia         Int      @default(0)
+  armadura            Int      @default(0)
+  poderdefogo         Int      @default(0)
+  pontosdevida        Int      @default(0)
+  pontosdemagia       Int      @default(0)
+  pontosdeexperiencia Int      @default(0)
+  nivel               Int      @default(1)
+  dinheiro            Int      @default(0)
+  tipodedano          String?
+  magiasconhecidas    String?
+  items               String?
+  vantagens           String?
+  racas               String?
+  desvantagens        String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }
 
-model Monsters {
-  id        String   @id
-  name      String   @unique
-  icon      String   @default("💀")
-  attack    Int      @default(0)
-  defense   Int      @default(0)
-  health    Int      @default(0)
-  level     Int      @default(0)
-  exp       Int      @default(0)
-  area      Int      @default(1)
-  coins     Int      @default(0)
-  inventory Json
-  createdAt DateTime
-  updatedAt DateTime @default(now())
+model Jogadores {
+  id                  Int      @id @default(autoincrement())
+  nome                String
+  imagem              String
+  forca               Int      @default(0)
+  habilidade          Int      @default(0)
+  resistencia         Int      @default(0)
+  armadura            Int      @default(0)
+  poderdefogo         Int      @default(0)
+  pontosdevida        Int      @default(0)
+  pontosdemagia       Int      @default(0)
+  pontosdeexperiencia Int      @default(0)
+  dinheiro            Int      @default(0)
+  tipodedano          String?
+  magiasconhecidas    String?
+  items               String?
+  vantagens           String?
+  racas               String?
+  desvantagens        String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }
