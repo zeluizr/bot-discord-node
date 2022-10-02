@@ -6,9 +6,9 @@ const execute = (bot, msg, args) => {
     .setTitle("🛡 Commands")
     .addFields([
       {
-        name: "For more info: ``ffk help``",
+        name: "For more info: ``mz help``",
         value:
-          "**Add ``ffk`` before any command**\n\n🏅 **Statistics commands** 🏅\n``cooldowns``, ``profile``\n\n:dagger: **Fighting commands** :dagger:\n``hunt``\n\n🛠 **Working commands** 🛠\n``farm``",
+          "**Add ``mz`` before any command**\n\n🏅 **Statistics commands** 🏅\n``cooldowns``, ``profile``\n\n:dagger: **Fighting commands** :dagger:\n``hunt``\n\n🛠 **Working commands** 🛠\n``farm``",
         inline: true,
       },
     ]);
