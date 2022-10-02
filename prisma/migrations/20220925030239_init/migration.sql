@@ -1,8 +1,8 @@
 -- CreateTable
 CREATE TABLE "Players" (
     "id" TEXT NOT NULL,
-    "nome" TEXT,
-    "imagem" TEXT NOT NULL DEFAULT 'chapolin.jpg',
+    "nome" TEXT NOT NULL DEFAULT '',
+    "imagem" TEXT NOT NULL DEFAULT '',
     "forca" INTEGER NOT NULL DEFAULT 0,
     "habilidade" INTEGER NOT NULL DEFAULT 0,
     "resistencia" INTEGER NOT NULL DEFAULT 0,
