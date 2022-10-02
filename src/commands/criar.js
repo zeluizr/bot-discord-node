@@ -68,7 +68,4 @@ const execute = async (bot, msg, args) => {
   );
 };
 
-module.exports = {
-  name: "criar",
-  execute,
-};
+module.exports = { name: "criar", execute };
