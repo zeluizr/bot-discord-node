@@ -64,7 +64,7 @@ const execute = async (bot, msg, args) => {
   }
 
   return msg.channel.send(
-    `O jogador **${msg.author.username}** já existe.\n Use o comando \`${process.env.PREFIX}ficha\` para ver sua ficha de personagem`
+    `O jogador **${msg.author.username}** já existe.\n Use o comando \`${process.env.INITIAL}ficha\` para ver sua ficha de personagem`
   );
 };
 

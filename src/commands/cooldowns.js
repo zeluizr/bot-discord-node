@@ -14,9 +14,7 @@ const execute = async (bot, msg, args) => {
     return msg.channel.send("You need create a character first!");
   }
 
-  console.log(player);
-
-  const { wait, waitString } = getWaitTime("2022-08-21T03:08:25.334Z");
+  const { wait, waitString } = getWaitTime("2023-08-21T03:08:25.334Z");
 
   const embed = new MessageEmbed()
     .setColor("#ff9900")

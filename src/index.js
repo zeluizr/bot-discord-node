@@ -24,9 +24,9 @@ bot.on("ready", function () {
 });
 
 bot.on("message", (msg) => {
-  if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
+  if (!msg.content.startsWith(process.env.INITIAL) || msg.author.bot) return;
 
-  const args = msg.content.slice(process.env.PREFIX.length).split(" ");
+  const args = msg.content.slice(process.env.INITIAL.length).split(" ");
   const command = args.shift();
 
   try {
