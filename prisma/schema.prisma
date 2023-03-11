@@ -7,49 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Players {
-  id                  String   @id
-  nome                String   @default("")
-  imagem              String   @default("")
-  forca               Int      @default(0)
-  habilidade          Int      @default(0)
-  resistencia         Int      @default(0)
-  armadura            Int      @default(0)
-  poderdefogo         Int      @default(0)
-  pontosdevida        Int      @default(0)
-  pontosdemagia       Int      @default(0)
-  pontosdeexperiencia Int      @default(0)
-  nivel               Int      @default(1)
-  dinheiro            Int      @default(0)
-  tipodedano          String?
-  magiasconhecidas    String?
-  items               String?
-  vantagens           String?
-  racas               String?
-  desvantagens        String?
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-}
-
-model Jogadores {
-  id                  Int      @id @default(autoincrement())
-  nome                String
-  imagem              String
-  forca               Int      @default(0)
-  habilidade          Int      @default(0)
-  resistencia         Int      @default(0)
-  armadura            Int      @default(0)
-  poderdefogo         Int      @default(0)
-  pontosdevida        Int      @default(0)
-  pontosdemagia       Int      @default(0)
-  pontosdeexperiencia Int      @default(0)
-  dinheiro            Int      @default(0)
-  tipodedano          String?
-  magiasconhecidas    String?
-  items               String?
-  vantagens           String?
-  racas               String?
-  desvantagens        String?
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
+model Player {
+  id             Int      @id @default(autoincrement())
+  nickname       String   @unique
+  masterPokemon  Json[]
+  catchedPokemon Json[]
+  viewedPokemon  Json[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }

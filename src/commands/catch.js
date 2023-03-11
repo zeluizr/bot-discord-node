@@ -22,15 +22,15 @@ const execute = async (bot, msg, args) => {
         **P**ontos de Vida: ${pokemon.stats[0].base_stat}
         **A**taque: ${pokemon.stats[1].base_stat}
         **D**efesa: ${pokemon.stats[2].base_stat}
-        ============================
         `,
         inline: true,
       },
-    ]);
+    ])
+    .setFooter("============================");
   msg.channel.send({ embed });
 };
 
 module.exports = {
-  name: "profile",
+  name: "catch",
   execute,
 };

@@ -1,19 +1,7 @@
 const MessageEmbed = require("discord.js").MessageEmbed;
-const { PrismaClient } = require("@prisma/client");
 const { getWaitTime } = require("../utils/getWaitTime");
-const prisma = new PrismaClient();
 
 const execute = async (bot, msg, args) => {
-  const player = await prisma.players.findUnique({
-    where: {
-      id: msg.author.id,
-    },
-  });
-
-  if (!player) {
-    return msg.channel.send("You need create a character first!");
-  }
-
   const { wait, waitString } = getWaitTime("2023-08-21T03:08:25.334Z");
 
   const embed = new MessageEmbed()
@@ -25,10 +13,10 @@ const execute = async (bot, msg, args) => {
     )
     .addFields([
       {
-        name: "🗡 **Experience**",
-        value: `✅ --- \`farm\`\n${
-          wait ? `⏰ ${waitString} --- \`hunt\`` : "✅ --- `hunt`"
-        }`,
+        name: "⚾︎ **Catch Pokemon**",
+        value: `
+        ${wait ? `⏰ ${waitString} --- \`catch\`` : "✅ --- `catch`"}
+        `,
         inline: false,
       },
     ]);
@@ -37,7 +25,7 @@ const execute = async (bot, msg, args) => {
 };
 
 module.exports = {
-  name: "cooldowns",
+  name: "cd",
   help: "Mostra o cooldowns do player",
   execute,
 };

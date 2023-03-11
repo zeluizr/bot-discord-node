@@ -1,5 +1,5 @@
 {
-  "name": "chatgpt",
+  "name": "pokemon",
   "version": "0.0.2",
   "description": "",
   "scripts": {
@@ -9,12 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@prisma/client": "^4.2.1",
-    "cohere-ai": "^6.0.0",
     "discord.js": "12.1.1",
-    "dotenv": "^8.2.0",
-    "openai": "^3.2.1"
-  },
-  "devDependencies": {
-    "prisma": "^4.2.1"
+    "dotenv": "^8.2.0"
   }
 }
