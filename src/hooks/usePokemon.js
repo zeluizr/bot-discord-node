@@ -1,7 +1,6 @@
 const usePokemon = (pokemonId) => {
-  const pokemon = fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).then(
-    (response) => response.json()
-  );
+  let pokemon = fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+  pokemon = pokemon.then((res) => res.json());
 
   return pokemon;
 };
